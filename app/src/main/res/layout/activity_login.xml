@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@drawable/side"
+    >
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/username"
+        android:hint="用户名"
+        android:maxLines="1"
+        android:inputType="text"
+        android:layout_marginHorizontal="45dp"
+        android:background="@drawable/edit_text_style"
+        android:layout_marginTop="150dp"
+        android:padding="10dp"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear2"
+        >
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/password"
+            android:hint="密码"
+            android:inputType="textPassword"
+            android:layout_marginHorizontal="45dp"
+            android:background="@drawable/edit_text_style"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            />
+
+        <ImageButton
+            android:id="@+id/eye_visible"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignEnd="@+id/password"
+            android:layout_alignRight="@+id/password"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="45dp"
+            android:background="#00000064"
+            android:scaleType="fitXY"
+            android:src="@drawable/eye_closed" />
+    </RelativeLayout>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:id="@+id/cbRememberMe"
+        android:layout_marginTop="-20dp"
+        android:layout_marginLeft="250dp"
+        android:text="记住我"
+        android:buttonTint="#AFAFBA"
+        android:checked="true"
+        />
+
+    <Button
+        android:background="@drawable/button_style"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:text="登录"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/butLogin"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginTop="250dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_m_login"
+            android:layout_marginTop="100dp"
+            android:paddingHorizontal="10dp"
+            android:textColor="@color/white"
+            android:text="手机号登录"
+            >
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvRegister"
+            android:layout_marginTop="100dp"
+            android:textColor="@color/white"
+            android:text="新用户注册"
+            >
+        </TextView>
+
+    </LinearLayout>
+
+</LinearLayout>
