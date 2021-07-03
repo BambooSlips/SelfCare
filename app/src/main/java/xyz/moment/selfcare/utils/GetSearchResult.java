@@ -20,6 +20,12 @@ import xyz.moment.selfcare.model.SearchResult;
 import xyz.moment.selfcare.model.json.Results;
 import xyz.moment.selfcare.model.json.Root;
 
+/*
+* 所需数据所在网页是动态页面 直接用OkHttp无法获取完整页面数据
+* 通过浏览器控制台审查元素发现一个API
+* 所需数据在该API返回的数据中以JSON中的HTML形式出现
+* 因此，使用Jsoup爬取该HTML可得所需数据
+*/
 public class GetSearchResult {
 
     private static final String TAG = "GetSearchResult";

@@ -69,6 +69,7 @@ public class HomeFragment extends Fragment {
         binding = null;
     }
 
+    //申请网络权限
     public void initData() {
         RxPermissions rxPermissions = new RxPermissions(this);
         rxPermissions.request(Manifest.permission.INTERNET).subscribe(

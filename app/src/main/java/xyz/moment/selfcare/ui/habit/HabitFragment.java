@@ -84,9 +84,8 @@ public class HabitFragment extends Fragment {
             if (habitLab.isHabitDone(habitName, new Date())) {         //今日习惯已完成
                 Log.d(TAG, "initData: "+habitName+" is done!!!");
             }
-            else {                                                      //今日习惯未完成
+            else {                                                     //今日习惯未完成
                 createHabits(habitName);
-
             }
         }
 
@@ -127,10 +126,15 @@ public class HabitFragment extends Fragment {
 
     }
 
-    public Habit createHabits(String habitName) {
-       Habit habit = new Habit(habitName);
-       habitLab.addHabit(habit);
-       return habit;
+    public Habit createHabits(String habitName) throws ParseException {
+        Habit habit = null;
+        //若数据库中已有同名习惯，则获取并返回它，否则创建新的同名习惯
+        habit = habitLab.getHabitByName(habitName);
+        if(habit == null) {
+            habit = new Habit(habitName);
+            habitLab.addHabit(habit);
+        }
+        return habit;
     }
 
     private void showInputDialog(Context context, String title) {
@@ -147,12 +151,14 @@ public class HabitFragment extends Fragment {
                         if ("".equals(editText.getText().toString()))
                             return;
                         Habit habit = new Habit(editText.getText().toString());
+                        //在数据库中新建新习惯
                         habitLab.addHabit(habit);
                         try {
                             habit = habitLab.getHabitByName(habit.getHabitName());
                         } catch (ParseException e) {
                             e.printStackTrace();
                         }
+                        //为RecyclerView添加新习惯
                         habitAdapter.add(habit);
                         rcvHabits.setAdapter(habitAdapter);
                         rcvHabits.setLayoutManager(new LinearLayoutManager(getContext()));

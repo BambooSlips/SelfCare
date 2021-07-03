@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
-import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,21 +19,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import xyz.moment.selfcare.database.UserLab;
 import xyz.moment.selfcare.databinding.FragmentProfileBinding;
-//import xyz.moment.selfcare.databinding.FragmentSlideshowBinding;
 import xyz.moment.selfcare.model.User;
 
 public class ProfileFragment extends Fragment {
     private static final String TAG = "ProfileFragment";
 
     private ProfileViewModel profileViewModel;
-//    private FragmentSlideshowBinding binding;
     private FragmentProfileBinding binding;
     private RelativeLayout rlUserPhoto;
     private ImageView ivUserPhoto;
@@ -50,7 +45,6 @@ public class ProfileFragment extends Fragment {
     private RelativeLayout rlWeight;
     private TextView tvWeight;
     private Button btnLogout;
-
 
     private User mUser;
     private UserLab userLab;
@@ -155,7 +149,7 @@ public class ProfileFragment extends Fragment {
     }
 
     public void changePhoto() {
-
+        //TODO
     }
 
     public void changeUsername(Context context) {
@@ -183,8 +177,7 @@ public class ProfileFragment extends Fragment {
     }
 
     private void showInputDialog(Context context, String title) {
-        /*@setView 装入一个EditView
-         */
+        //装入一个EditView
         final EditText editText = new EditText(context);
         AlertDialog.Builder inputDialog = new AlertDialog.Builder(context);
         inputDialog.setTitle(title).setView(editText);

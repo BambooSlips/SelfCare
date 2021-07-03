@@ -51,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_login);
 
+        //若选择过“记住我”，则跳转到MainActivity, 否则登录
         if(isAccountSaved()) {
             Log.d(TAG, "onCreate: username="+user.getUsername());
             passUserInfo();

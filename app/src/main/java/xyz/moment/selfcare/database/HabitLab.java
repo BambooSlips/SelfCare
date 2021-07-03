@@ -73,6 +73,7 @@ public class HabitLab {
         return new HabitCursorWrapper(cursor);
     }
 
+    //按习惯名分组查询习惯
     public HabitCursorWrapper queryHabitsNames() {
         Cursor cursor = mDatabase.query(
                 HabitDbSchema.HabitTable.NAME,
@@ -87,6 +88,7 @@ public class HabitLab {
         return  new HabitCursorWrapper(cursor);
     }
 
+    //获取全部习惯名
     public List<String> getHabitsNames() {
        List<String>  names = new ArrayList<>();
        HabitCursorWrapper cursorWrapper = queryHabitsNames();
